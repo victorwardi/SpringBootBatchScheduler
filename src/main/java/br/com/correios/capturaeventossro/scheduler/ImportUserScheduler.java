@@ -7,12 +7,15 @@ import org.springframework.batch.core.JobParametersBuilder;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
-@Component
+@Configuration
+@EnableScheduling
 public class ImportUserScheduler {
 
     @Autowired
@@ -23,7 +26,7 @@ public class ImportUserScheduler {
     Job importUserJob;
 
 
-      @Scheduled(cron = "*/5 * * * * *")
+    @Scheduled(cron = "*/${tempo.intervalo} * * * * *")
     public void perform() throws Exception {
 
         System.out.println("Job Started at :" + new Date());

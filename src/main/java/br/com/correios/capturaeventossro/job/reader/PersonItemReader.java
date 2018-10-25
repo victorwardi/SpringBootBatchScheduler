@@ -7,7 +7,6 @@ import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Component;
 
-@Component
 public class PersonItemReader extends FlatFileItemReader<Person> {
 
     public PersonItemReader() {

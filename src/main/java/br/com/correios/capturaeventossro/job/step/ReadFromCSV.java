@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 import java.util.Collections;
 import java.util.Map;
 
-@Configuration
+
 public class ReadFromCSV {
 
     @Bean
